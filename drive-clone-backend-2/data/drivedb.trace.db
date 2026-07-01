@@ -1,0 +1,283 @@
+2026-03-13 13:17:03.224080+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table activities (\000d\000a        id bigint not null auto_increment,\000d\000a        created_at datetime(6),\000d\000a        description varchar(500),\000d\000a        file_id bigint,\000d\000a        file_name varchar(255),\000d\000a        folder_id bigint,\000d\000a        folder_name varchar(255),\000d\000a        type enum ('FILE_UPLOAD','FILE_DOWNLOAD','FILE_DELETE','FILE_RESTORE','FILE_RENAME','FILE_MOVE','FILE_STAR','FILE_SHARE','FOLDER_CREATE','FOLDER_DELETE','FOLDER_RESTORE','FOLDER_RENAME','FOLDER_MOVE','FOLDER_STAR','USER_LOGIN','USER_LOGOUT','USER_REGISTER') not null,\000d\000a        user_id bigint not null,\000d\000a        primary key (id)\000d\000a    ) engine[*]=InnoDB"; expected "identifier"; SQL statement:
+
+    create table activities (
+        id bigint not null auto_increment,
+        created_at datetime(6),
+        description varchar(500),
+        file_id bigint,
+        file_name varchar(255),
+        folder_id bigint,
+        folder_name varchar(255),
+        type enum ('FILE_UPLOAD','FILE_DOWNLOAD','FILE_DELETE','FILE_RESTORE','FILE_RENAME','FILE_MOVE','FILE_STAR','FILE_SHARE','FOLDER_CREATE','FOLDER_DELETE','FOLDER_RESTORE','FOLDER_RENAME','FOLDER_MOVE','FOLDER_STAR','USER_LOGIN','USER_LOGOUT','USER_REGISTER') not null,
+        user_id bigint not null,
+        primary key (id)
+    ) engine=InnoDB [42001-224]
+2026-03-13 13:17:03.233095+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table file_shares (\000d\000a        id bigint not null auto_increment,\000d\000a        active bit not null,\000d\000a        created_at datetime(6),\000d\000a        expires_at datetime(6),\000d\000a        permission enum ('VIEW','COMMENT','EDIT'),\000d\000a        shared_with_email varchar(255),\000d\000a        file_id bigint not null,\000d\000a        shared_by_id bigint not null,\000d\000a        shared_with_id bigint,\000d\000a        primary key (id)\000d\000a    ) engine[*]=InnoDB"; expected "identifier"; SQL statement:
+
+    create table file_shares (
+        id bigint not null auto_increment,
+        active bit not null,
+        created_at datetime(6),
+        expires_at datetime(6),
+        permission enum ('VIEW','COMMENT','EDIT'),
+        shared_with_email varchar(255),
+        file_id bigint not null,
+        shared_by_id bigint not null,
+        shared_with_id bigint,
+        primary key (id)
+    ) engine=InnoDB [42001-224]
+2026-03-13 13:17:03.239486+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table files (\000d\000a        id bigint not null auto_increment,\000d\000a        created_at datetime(6),\000d\000a        description varchar(500),\000d\000a        download_count bigint not null,\000d\000a        file_path varchar(255) not null,\000d\000a        file_size bigint not null,\000d\000a        mime_type varchar(255) not null,\000d\000a        name varchar(255) not null,\000d\000a        original_name varchar(255) not null,\000d\000a        share_token varchar(100),\000d\000a        starred bit not null,\000d\000a        stored_name varchar(255) not null,\000d\000a        trashed bit not null,\000d\000a        trashed_at datetime(6),\000d\000a        updated_at datetime(6),\000d\000a        view_count bigint not null,\000d\000a        visibility enum ('PRIVATE','SHARED','PUBLIC'),\000d\000a        folder_id bigint,\000d\000a        owner_id bigint not null,\000d\000a        primary key (id)\000d\000a    ) engine[*]=InnoDB"; expected "identifier"; SQL statement:
+
+    create table files (
+        id bigint not null auto_increment,
+        created_at datetime(6),
+        description varchar(500),
+        download_count bigint not null,
+        file_path varchar(255) not null,
+        file_size bigint not null,
+        mime_type varchar(255) not null,
+        name varchar(255) not null,
+        original_name varchar(255) not null,
+        share_token varchar(100),
+        starred bit not null,
+        stored_name varchar(255) not null,
+        trashed bit not null,
+        trashed_at datetime(6),
+        updated_at datetime(6),
+        view_count bigint not null,
+        visibility enum ('PRIVATE','SHARED','PUBLIC'),
+        folder_id bigint,
+        owner_id bigint not null,
+        primary key (id)
+    ) engine=InnoDB [42001-224]
+2026-03-13 13:17:03.248505+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table folders (\000d\000a        id bigint not null auto_increment,\000d\000a        color varchar(7),\000d\000a        created_at datetime(6),\000d\000a        name varchar(255) not null,\000d\000a        starred bit not null,\000d\000a        trashed bit not null,\000d\000a        trashed_at datetime(6),\000d\000a        updated_at datetime(6),\000d\000a        owner_id bigint not null,\000d\000a        parent_id bigint,\000d\000a        primary key (id)\000d\000a    ) engine[*]=InnoDB"; expected "identifier"; SQL statement:
+
+    create table folders (
+        id bigint not null auto_increment,
+        color varchar(7),
+        created_at datetime(6),
+        name varchar(255) not null,
+        starred bit not null,
+        trashed bit not null,
+        trashed_at datetime(6),
+        updated_at datetime(6),
+        owner_id bigint not null,
+        parent_id bigint,
+        primary key (id)
+    ) engine=InnoDB [42001-224]
+2026-03-13 13:17:03.255651+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+
+    alter table users 
+       drop index UK6dotkott2kjsp8vw4d0m25fb7 [42104-224]
+2026-03-13 13:17:03.257181+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found; SQL statement:
+
+    alter table users 
+       add constraint UK6dotkott2kjsp8vw4d0m25fb7 unique ( [42102-224]
+2026-03-13 13:17:03.258175+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ACTIVITIES" not found; SQL statement:
+
+    alter table activities 
+       add constraint FKq6cjukylkgxdjkm9npk9va2f2 
+       foreign key (user_id) 
+       references user [42102-224]
+2026-03-13 13:17:03.262179+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FILE_SHARES" not found; SQL statement:
+
+    alter table file_shares 
+       add constraint FKlf6yrfalqkfrnb3jij96sddbl 
+       foreign key (file_id) 
+       references file [42102-224]
+2026-03-13 13:17:03.268180+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FILE_SHARES" not found; SQL statement:
+
+    alter table file_shares 
+       add constraint FK4qhc2b6973ukty71tlfcyy47e 
+       foreign key (shared_by_id) 
+       references user [42102-224]
+2026-03-13 13:17:03.272180+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FILE_SHARES" not found; SQL statement:
+
+    alter table file_shares 
+       add constraint FKk006au5175fh8du3siguixpgx 
+       foreign key (shared_with_id) 
+       references user [42102-224]
+2026-03-13 13:17:03.283188+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FILES" not found; SQL statement:
+
+    alter table files 
+       add constraint FKe9awb46i258gxwjtbjprmtpmi 
+       foreign key (folder_id) 
+       references folder [42102-224]
+2026-03-13 13:17:03.286175+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FILES" not found; SQL statement:
+
+    alter table files 
+       add constraint FKndbd0r86rsovslrthjrgl960x 
+       foreign key (owner_id) 
+       references user [42102-224]
+2026-03-13 13:17:03.290456+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FOLDERS" not found; SQL statement:
+
+    alter table folders 
+       add constraint FK5b5p96ewk9msg1omqhl0vttop 
+       foreign key (owner_id) 
+       references user [42102-224]
+2026-03-13 13:17:03.294453+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FOLDERS" not found; SQL statement:
+
+    alter table folders 
+       add constraint FKqcp836dgme9195j0wy9v3b6o3 
+       foreign key (parent_id) 
+       references folder [42102-224]
+2026-03-19 13:17:07.532967+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table activities (\000d\000a        id bigint not null auto_increment,\000d\000a        created_at datetime(6),\000d\000a        description varchar(500),\000d\000a        file_id bigint,\000d\000a        file_name varchar(255),\000d\000a        folder_id bigint,\000d\000a        folder_name varchar(255),\000d\000a        type enum ('FILE_UPLOAD','FILE_DOWNLOAD','FILE_DELETE','FILE_RESTORE','FILE_RENAME','FILE_MOVE','FILE_STAR','FILE_SHARE','FOLDER_CREATE','FOLDER_DELETE','FOLDER_RESTORE','FOLDER_RENAME','FOLDER_MOVE','FOLDER_STAR','USER_LOGIN','USER_LOGOUT','USER_REGISTER') not null,\000d\000a        user_id bigint not null,\000d\000a        primary key (id)\000d\000a    ) engine[*]=InnoDB"; expected "identifier"; SQL statement:
+
+    create table activities (
+        id bigint not null auto_increment,
+        created_at datetime(6),
+        description varchar(500),
+        file_id bigint,
+        file_name varchar(255),
+        folder_id bigint,
+        folder_name varchar(255),
+        type enum ('FILE_UPLOAD','FILE_DOWNLOAD','FILE_DELETE','FILE_RESTORE','FILE_RENAME','FILE_MOVE','FILE_STAR','FILE_SHARE','FOLDER_CREATE','FOLDER_DELETE','FOLDER_RESTORE','FOLDER_RENAME','FOLDER_MOVE','FOLDER_STAR','USER_LOGIN','USER_LOGOUT','USER_REGISTER') not null,
+        user_id bigint not null,
+        primary key (id)
+    ) engine=InnoDB [42001-224]
+2026-03-19 13:17:07.550281+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table file_shares (\000d\000a        id bigint not null auto_increment,\000d\000a        active bit not null,\000d\000a        created_at datetime(6),\000d\000a        expires_at datetime(6),\000d\000a        permission enum ('VIEW','COMMENT','EDIT'),\000d\000a        shared_with_email varchar(255),\000d\000a        file_id bigint not null,\000d\000a        shared_by_id bigint not null,\000d\000a        shared_with_id bigint,\000d\000a        primary key (id)\000d\000a    ) engine[*]=InnoDB"; expected "identifier"; SQL statement:
+
+    create table file_shares (
+        id bigint not null auto_increment,
+        active bit not null,
+        created_at datetime(6),
+        expires_at datetime(6),
+        permission enum ('VIEW','COMMENT','EDIT'),
+        shared_with_email varchar(255),
+        file_id bigint not null,
+        shared_by_id bigint not null,
+        shared_with_id bigint,
+        primary key (id)
+    ) engine=InnoDB [42001-224]
+2026-03-19 13:17:07.561286+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table files (\000d\000a        id bigint not null auto_increment,\000d\000a        created_at datetime(6),\000d\000a        description varchar(500),\000d\000a        download_count bigint not null,\000d\000a        file_path varchar(255) not null,\000d\000a        file_size bigint not null,\000d\000a        mime_type varchar(255) not null,\000d\000a        name varchar(255) not null,\000d\000a        original_name varchar(255) not null,\000d\000a        share_token varchar(100),\000d\000a        starred bit not null,\000d\000a        stored_name varchar(255) not null,\000d\000a        trashed bit not null,\000d\000a        trashed_at datetime(6),\000d\000a        updated_at datetime(6),\000d\000a        view_count bigint not null,\000d\000a        visibility enum ('PRIVATE','SHARED','PUBLIC'),\000d\000a        folder_id bigint,\000d\000a        owner_id bigint not null,\000d\000a        primary key (id)\000d\000a    ) engine[*]=InnoDB"; expected "identifier"; SQL statement:
+
+    create table files (
+        id bigint not null auto_increment,
+        created_at datetime(6),
+        description varchar(500),
+        download_count bigint not null,
+        file_path varchar(255) not null,
+        file_size bigint not null,
+        mime_type varchar(255) not null,
+        name varchar(255) not null,
+        original_name varchar(255) not null,
+        share_token varchar(100),
+        starred bit not null,
+        stored_name varchar(255) not null,
+        trashed bit not null,
+        trashed_at datetime(6),
+        updated_at datetime(6),
+        view_count bigint not null,
+        visibility enum ('PRIVATE','SHARED','PUBLIC'),
+        folder_id bigint,
+        owner_id bigint not null,
+        primary key (id)
+    ) engine=InnoDB [42001-224]
+2026-03-19 13:17:07.573274+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table folders (\000d\000a        id bigint not null auto_increment,\000d\000a        color varchar(7),\000d\000a        created_at datetime(6),\000d\000a        name varchar(255) not null,\000d\000a        starred bit not null,\000d\000a        trashed bit not null,\000d\000a        trashed_at datetime(6),\000d\000a        updated_at datetime(6),\000d\000a        owner_id bigint not null,\000d\000a        parent_id bigint,\000d\000a        primary key (id)\000d\000a    ) engine[*]=InnoDB"; expected "identifier"; SQL statement:
+
+    create table folders (
+        id bigint not null auto_increment,
+        color varchar(7),
+        created_at datetime(6),
+        name varchar(255) not null,
+        starred bit not null,
+        trashed bit not null,
+        trashed_at datetime(6),
+        updated_at datetime(6),
+        owner_id bigint not null,
+        parent_id bigint,
+        primary key (id)
+    ) engine=InnoDB [42001-224]
+2026-03-19 13:17:07.595287+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+
+    alter table users 
+       drop index UK6dotkott2kjsp8vw4d0m25fb7 [42104-224]
+2026-03-19 13:17:07.597287+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found; SQL statement:
+
+    alter table users 
+       add constraint UK6dotkott2kjsp8vw4d0m25fb7 unique ( [42102-224]
+2026-03-19 13:17:07.598270+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ACTIVITIES" not found; SQL statement:
+
+    alter table activities 
+       add constraint FKq6cjukylkgxdjkm9npk9va2f2 
+       foreign key (user_id) 
+       references user [42102-224]
+2026-03-19 13:17:07.609269+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FILE_SHARES" not found; SQL statement:
+
+    alter table file_shares 
+       add constraint FKlf6yrfalqkfrnb3jij96sddbl 
+       foreign key (file_id) 
+       references file [42102-224]
+2026-03-19 13:17:07.619273+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FILE_SHARES" not found; SQL statement:
+
+    alter table file_shares 
+       add constraint FK4qhc2b6973ukty71tlfcyy47e 
+       foreign key (shared_by_id) 
+       references user [42102-224]
+2026-03-19 13:17:07.627542+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FILE_SHARES" not found; SQL statement:
+
+    alter table file_shares 
+       add constraint FKk006au5175fh8du3siguixpgx 
+       foreign key (shared_with_id) 
+       references user [42102-224]
+2026-03-19 13:17:07.636567+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FILES" not found; SQL statement:
+
+    alter table files 
+       add constraint FKe9awb46i258gxwjtbjprmtpmi 
+       foreign key (folder_id) 
+       references folder [42102-224]
+2026-03-19 13:17:07.642542+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FILES" not found; SQL statement:
+
+    alter table files 
+       add constraint FKndbd0r86rsovslrthjrgl960x 
+       foreign key (owner_id) 
+       references user [42102-224]
+2026-03-19 13:17:07.649545+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FOLDERS" not found; SQL statement:
+
+    alter table folders 
+       add constraint FK5b5p96ewk9msg1omqhl0vttop 
+       foreign key (owner_id) 
+       references user [42102-224]
+2026-03-19 13:17:07.656545+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FOLDERS" not found; SQL statement:
+
+    alter table folders 
+       add constraint FKqcp836dgme9195j0wy9v3b6o3 
+       foreign key (parent_id) 
+       references folder [42102-224]
+2026-03-19 13:21:37.114080+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+select u1_0.id,u1_0.created_at,u1_0.email,u1_0.email_verified,u1_0.enabled,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.profile_picture,u1_0.role,u1_0.storage_limit,u1_0.storage_used,u1_0.updated_at from users u1_0 where u1_0.email=? [42104-224]
+2026-03-19 13:21:53.999286+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+select u1_0.id,u1_0.created_at,u1_0.email,u1_0.email_verified,u1_0.enabled,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.profile_picture,u1_0.role,u1_0.storage_limit,u1_0.storage_used,u1_0.updated_at from users u1_0 where u1_0.email=? [42104-224]
+2026-03-19 13:21:54.397981+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+select u1_0.id,u1_0.created_at,u1_0.email,u1_0.email_verified,u1_0.enabled,u1_0.first_name,u1_0.last_name,u1_0.password,u1_0.profile_picture,u1_0.role,u1_0.storage_limit,u1_0.storage_used,u1_0.updated_at from users u1_0 where u1_0.email=? [42104-224]
