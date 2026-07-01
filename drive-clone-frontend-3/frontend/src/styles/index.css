@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Google Sans', 'Roboto', system-ui, sans-serif;
+  background-color: #fff;
+  color: #202124;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #a8a8a8; }
+
+.drive-btn {
+  @apply inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200;
+}
+.drive-btn-primary {
+  @apply drive-btn bg-primary-500 text-white hover:bg-primary-600 shadow-sm hover:shadow-md;
+}
+.drive-btn-secondary {
+  @apply drive-btn bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 shadow-sm;
+}
+
+.drive-item {
+  @apply flex items-center gap-3 p-2 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-150 select-none;
+}
+.drive-item.selected {
+  @apply bg-blue-50 hover:bg-blue-100;
+}
+
+.upload-overlay {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-blue-500/10 backdrop-blur-sm;
+  border: 3px dashed #4F46E5;
+}
+
+.sidebar-item {
+  @apply flex items-center gap-3 px-4 py-2.5 rounded-full cursor-pointer text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors duration-150;
+}
+.sidebar-item.active {
+  @apply bg-blue-50 text-primary-600 font-semibold;
+}
+
+.context-menu {
+  @apply fixed z-50 bg-white rounded-xl shadow-2xl border border-gray-100 py-1 min-w-48;
+}
+.context-menu-item {
+  @apply flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 cursor-pointer transition-colors;
+}
+.context-menu-item.danger {
+  @apply text-red-600 hover:bg-red-50;
+}
+.context-menu-divider {
+  @apply border-t border-gray-100 my-1;
+}
+
+.modal-overlay {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm px-4;
+}
+.modal {
+  @apply bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden;
+}
+
+.search-bar {
+  @apply flex items-center gap-3 px-4 py-2 sm:py-2.5 bg-gray-100 rounded-full text-sm transition-all duration-200;
+}
+.search-bar:focus-within {
+  @apply bg-white shadow-md ring-1 ring-primary-500/30;
+}
+
+.storage-bar {
+  @apply h-1.5 rounded-full bg-gray-200 overflow-hidden;
+}
+.storage-bar-fill {
+  @apply h-full rounded-full bg-primary-500 transition-all duration-500;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out;
+}
+
+.upload-progress {
+  @apply fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 bg-white rounded-2xl shadow-2xl border border-gray-100 w-72 sm:w-80 overflow-hidden;
+}
+
+/* Mobile bottom nav hint */
+@media (max-width: 1023px) {
+  .sidebar-item {
+    @apply px-3 py-3;
+  }
+}
